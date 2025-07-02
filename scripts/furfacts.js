@@ -14,44 +14,65 @@ function renderDogDayCard(data) {
     const container = document.querySelector(".dotd-card");
     container.innerHTML = "";
     let random = Math.floor(Math.random() * data.length);
-    console.log(random);
-    console.log(data[random].image.url);
 
     const breedHTML = dogDayTemplate(data[random]);
     container.innerHTML += breedHTML;
 
 }
 
+// function renderDogBreeds(data) {
+//     const container = document.querySelector(".gallery");
+
+//     const alaskanHusky = data[7];
+//     console.log(alaskanHusky);
+//     const alaskanHuskyHTML = dogBreedTemplate(alaskanHusky);
+//     container.innerHTML += alaskanHuskyHTML;
+
+    
+//     const germanShepherd = data[82];
+//     console.log(germanShepherd);
+//     const germanShepherdHTML = dogBreedTemplate(germanShepherd);
+//     container.innerHTML += germanShepherdHTML;
+    
+//     const goldenRetriever = data[86];
+//     console.log(goldenRetriever);
+//     const goldenRetrieverHTML = dogBreedTemplate(goldenRetriever);
+//     container.innerHTML += goldenRetrieverHTML;
+    
+//     const pomeranian = data[125];
+//     console.log(pomeranian);
+//     const pomeranianHTML = dogBreedTemplate(pomeranian);
+//     container.innerHTML += pomeranianHTML;
+    
+//     const pug = data[128];
+//     console.log(pug);
+//     const pugHTML = dogBreedTemplate(pug);
+//     container.innerHTML += pugHTML;
+    
+// }
+
 function renderDogBreeds(data) {
     const container = document.querySelector(".gallery");
 
-    const alaskanHusky = data[7];
-    console.log(alaskanHusky);
-    const alaskanHuskyHTML = dogBreedTemplate(alaskanHusky);
-    container.innerHTML += alaskanHuskyHTML;
+    const featuredBreeds = [
+        "Alaskan Husky",
+        "German Shepherd Dog",
+        "Golden Retriever",
+        "Pomeranian",
+        "Pug"
+    ];
 
-    
-    const germanShepherd = data[82];
-    console.log(germanShepherd);
-    const germanShepherdHTML = dogBreedTemplate(germanShepherd);
-    container.innerHTML += germanShepherdHTML;
-    
-    const goldenRetriever = data[86];
-    console.log(goldenRetriever);
-    const goldenRetrieverHTML = dogBreedTemplate(goldenRetriever);
-    container.innerHTML += goldenRetrieverHTML;
-    
-    const pomeranian = data[125];
-    console.log(pomeranian);
-    const pomeranianHTML = dogBreedTemplate(pomeranian);
-    container.innerHTML += pomeranianHTML;
-    
-    const pug = data[128];
-    console.log(pug);
-    const pugHTML = dogBreedTemplate(pug);
-    container.innerHTML += pugHTML;
-    
+    for (const name of featuredBreeds) {
+        const breed = data.find(b => b.name === name);
+        if (breed) {
+            const breedHTML = dogBreedTemplate(breed);
+            container.innerHTML += breedHTML;
+        } else {
+            console.warn(`Breed "${name}" not found in API data`);
+        }
+    }
 }
+
 
 
 async function getCatData() {
@@ -64,8 +85,6 @@ function renderCatDayCard(data) {
     const container = document.querySelector(".cotd-card");
     container.innerHTML = "";
     let random = Math.floor(Math.random() * data.length);
-    console.log(random);
-    console.log(data[random].image.url);
     const breedHTML = catDayTemplate(data[random]);
     container.innerHTML += breedHTML;
 }
@@ -75,27 +94,22 @@ function renderCatBreeds(data) {
     container.innerHTML = "";
 
     const cheetoh = data[21];
-    console.log(cheetoh);
     const cheetohHTML = catBreedTemplate(cheetoh);
     container.innerHTML += cheetohHTML;
 
     const himalayan = data[33];
-    console.log(himalayan);
     const himalayanHTML = catBreedTemplate(himalayan);
     container.innerHTML += himalayanHTML;
 
     const maineCoon = data[40];
-    console.log(maineCoon);
     const maineCoonHTML = catBreedTemplate(maineCoon);
     container.innerHTML += maineCoonHTML;
 
     const siamese = data[56];
-    console.log(siamese);
     const siameseHTML = catBreedTemplate(siamese);
     container.innerHTML += siameseHTML;
 
     const sphynx = data[61];
-    console.log(sphynx);
     const sphynxHTML = catBreedTemplate(sphynx);
     container.innerHTML += sphynxHTML;
 
