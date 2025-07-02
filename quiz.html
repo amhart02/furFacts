@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fur Facts</title>
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+    <header>
+        <a href="index.html"><img src="furFactsLogo.png" alt="Fur Facts Logo"></a>
+        <a href="index.html">Fur Facts</a>
+        <a href="dog.html">Dog Breeds</a>
+        <a href="cat.html">Cat Breeds</a> 
+        <h1><a href="quiz.html?quizType=dog">Quiz</a></h1>
+    </header>    
+    <main>
+        <div class="menu">
+            <label for="dog-or-cat">Select a quiz:</label>
+            <select name="dog-or-cat" id="dog-or-cat">
+                <option value="cat">Cat</option>
+                <option value="dog">Dog</option>
+            </select>
+        </div>
+        <div class="score-container">
+            
+        </div>
+        <form>
+            <div class="quiz-container">
+                
+            </div>
+            <div class="submit-button">
+                <button class="submit" type="submit">Submit</button>
+            </div>
+        </form>
+        <!-- results -->
+    </main>
+    <script type="module" src="scripts/quiz.js"></script>
+</body> 
+</html>   

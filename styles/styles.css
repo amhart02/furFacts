@@ -1,0 +1,331 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap'); 
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    --header-font: "Playfair Display", serif;
+    --body-font: "Montserrat", serif;
+
+    --primary-color: #2072AF ;
+    --secondary-color: rgb(237, 236, 236);
+    --accent-color: #4F7942;
+}
+
+/* entire website elements */
+body{
+    margin: 0 auto;
+}
+header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 200px;
+    background-color: var(--accent-color);
+    margin-bottom: 30px;
+}
+header img{
+    max-width: 150px;
+}
+header img:hover {
+    animation: tilt 2s infinite; 
+}
+@keyframes tilt {
+    0%{
+        transform: rotate(-45deg);
+    }
+    25%{
+        transform: rotate(45deg);
+    }
+    50%{
+        transform: rotate(-45deg);
+    }
+    75%{
+        transform: rotate(45deg);
+    }
+    100%{
+        transform: rotate(-45deg);
+    }
+}
+header a {
+    margin: 10px;
+    font-size: 20px;
+    text-decoration: none;
+    font-family: var(--body-font);
+    color: white;
+}
+header h1 a {
+    font-family: var(--header-font);
+    color: var(white);
+    font-size: 2.5rem;
+}
+
+/* home page */
+.aotd {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+.dotd-card img, .cotd-card img {
+    max-width: 100%;
+    height: 500px;
+    object-fit: cover;
+}
+.dotd-card, .cotd-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 1000%;
+}
+.purpose {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 30px 15%;
+    background-color: var(--secondary-color);
+    padding: 20px;
+    border-radius: 10px;
+}
+.purpose h3 {
+    font-size: 40px;
+    font-family: var(--header-font);
+    color: var(--accent-color);
+    margin: 0;
+}
+.purpose p {
+    text-align: center;
+    font-size: 20px;
+    font-family: var(--body-font);
+    margin: 50px;
+}
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+.gallery-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: var(--secondary-color);
+}
+.gallery-card img {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}
+.gallery-card h2 {
+    text-align: center;
+    font-family: var(--header-font);
+    color: var(--accent-color)
+}
+.featured{
+    font-size: 40px;
+    font-family: var(--header-font);
+    color: var(--accent-color);
+    text-align: center;
+    margin-top: 50px;
+}
+
+/* Dog and cat breeds pages */
+.search{
+    display: flex;
+    justify-content: center;
+    margin: 30px;
+    margin-top: 0;
+}
+.search input {
+    width: 70%;
+    border: 3px solid var(--secondary-color);
+    border-radius: 10px;
+}
+.search button {
+    background-color: var(--primary-color);
+    border-radius: 10px;
+    border: none;
+    width: 20%;
+    margin-left: 20px;
+}
+.search button img{
+    width: 35px;
+    height: 35px;
+}
+.quiz {
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+}
+.quiz a{
+    text-align: center;
+    text-decoration: none;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 10px;
+    padding: 20px;
+    font-family: var(--header-font);
+    font-size: 30px;
+}
+.breeds {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+.breed {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: var(--secondary-color);
+}
+.breed img {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}
+.breed h2 {
+    text-align: center;
+    font-family: var(--header-font);
+    color: var(--accent-color)
+}
+.breed-info p {
+    font-family: var(--body-font);
+}
+footer {
+    display: flex;
+    justify-content: center;
+}
+footer a {
+    padding: 10px 15px;
+    margin: 30px;
+    background-color: var(--primary-color);
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+    cursor: pointer;
+    z-index: 1000; 
+    font-family: var(--header-font);
+    font-size: 30px;
+}
+
+/* quiz page */
+.menu {
+    display: flex;
+    justify-content: center;
+    margin: 40px;
+}
+.menu label {
+    font-family: var(--header-font);
+    color: var(--primary-color);
+    font-size: 40px;
+    margin-right: 20px;
+}
+#dog-or-cat {
+    font: var(--body-font);
+    color: white;
+    background-color: var(--primary-color);
+    font-size: 30px;
+    border-radius: 10px;
+    border: none;
+    padding: 10px 15px;
+}
+#dog-or-cat:focus {
+    outline: none;
+}
+.score-container {
+    background-color: var(--secondary-color);
+    text-align: center;
+    border-radius: 10px;
+    margin: 50px 25%;
+    padding: 5%;
+}
+.score-container h2 {
+    font-family: var(--header-font);
+    color: var(--accent-color);
+    font-size: 40px; 
+    margin-top: 0;
+}
+.score-container p {
+    font-family: var(--body-font);
+}
+.quiz-container {
+    display: flex;
+    flex-direction: column;
+}
+.quizQuestion {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--secondary-color);
+    border-radius: 10px;
+    margin: 10px 15%;
+    padding: 50px 10%;
+}
+.quizOptions {
+    display: flex;
+    flex-direction: column;
+    color: var(--accent-color);
+    font-family: var(--body-font);
+    font-weight: 400;
+    font-size: 20px;
+}
+.quizOption input[type="radio"] {
+    accent-color: var(--accent-color);
+}
+.quizQuestion img {
+    width: 350px;
+    height: 100%;
+    object-fit: contain;
+    margin-right: 25px;
+}
+.submit {
+    display: flex;
+    justify-self: center;
+    margin: 50px;
+    padding: 20px 20px;
+    color: white;
+    background-color: var(--primary-color);
+    border: none;
+    border-radius: 10px;
+    font-family: var(--header-font);
+    font-size: 25px;
+}
+
+
+@media screen and (max-width: 850px) {
+    /* breed pages */
+    .breeds, .gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    /* quiz page */
+    .score-container {
+        margin: 100px;
+    }
+    .quiz-container {
+        margin: 10px;
+    }
+    .quizQuestion {
+        margin: 10px;
+        padding: 20px;
+    }
+    .quizOptions {
+        font-size: 15px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    /* breed pages */
+    .breeds, .gallery {
+        display: flex;
+        flex-direction: column;
+    }
+    /* quiz page */
+    .quizQuestion img {
+        width: 300px;
+    }
+    .dog-or-cat:focus {
+        font-size: 15px;
+    }
+}
